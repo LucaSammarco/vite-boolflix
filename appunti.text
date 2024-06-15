@@ -1,0 +1,15 @@
+Api The Movie DataBase bed6a74221d9fac339dc97cf72a005e9
+
+https://api.themoviedb.org/3/movie/550?api_key=3fbc7aaa434f8e78f2cdba0457ea9346
+
+Ricerca film specifico
+https://api.themoviedb.org/3/search/movie?api_key=3fbc7aaa434f8e78f2cdba0457ea9346&query=ritorno+al+futuro
+
+
+Query per dettagli film
+https://developer.themoviedb.org/docs/search-and-query-for-details
+
+
+
+Esempio di chiamata con page
+https://api.themoviedb.org/3/search/movie?api_key=3fbc7aaa434f8e78f2cdba0457ea9346&query=ritorno&page=2
