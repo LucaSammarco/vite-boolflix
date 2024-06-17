@@ -1,3 +1,9 @@
 * {
     margin: 0rem auto;
 }
+
+@import 'node_modules/@textabledev/langs-flags-list/lang-flags.css';
+
+.lang-icon {
+  background-image: url('node_modules/@textabledev/langs-flags-list/lang-flags.png');
+}
