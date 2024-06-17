@@ -7,7 +7,9 @@ export default {
     data() {
         return {
             store,
-            search: ''
+            search: '',
+            pathImage: 'https://image.tmdb.org/t/p/',
+            imgDimensionM:'w342/'
         };
     },
 
@@ -74,7 +76,7 @@ export default {
    
    <main>
     <div class="input-group mb-3 p-5">
-            <input type="text" v-model="store.search" class="form-control" placeholder="Movie Title..." aria-label="Recipient's username" aria-describedby="button-addon2">
+            <input type="text" v-model="store.search" class="form-control" placeholder="Movie Title..." aria-label="Recipient's username" aria-describedby="button-addon2" @keyup.enter="searchQuery()">
             <button class="btn btn-outline-secondary" type="button" id="button-addon2" @click="searchQuery()">Search Movie</button>
     </div>
 
@@ -82,6 +84,7 @@ export default {
     <div class="movies d-flex flex-wrap">
     <article v-for="serie in store.series.results" :key="serie.id" class="movie-item">
         <h2>Titolo: {{ serie.name }}</h2>
+        <img :src="this.pathImage + this.imgDimensionM +  serie.poster_path" alt="">
         <p>Titolo Originale: {{ serie.original_name }}</p>
         <p>Lingua: <span class="lang-icon" :class="'lang-icon-' + serie.original_language"></span></p>
         <p>Voto: {{ serie.vote_average }}</p>
