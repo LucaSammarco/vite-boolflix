@@ -9,8 +9,9 @@ export default {
             store,
             search: '',
             pathImage: 'https://image.tmdb.org/t/p/',
-            imgDimensionM:'w342/'
-        };
+            imgDimensionM:'w342/',
+            star: '<i class="fa-solid fa-star"></i>',
+            stars: [],        };
     },
 
     methods: {
@@ -60,6 +61,17 @@ export default {
         searchQuery(){
             this.searchMovie();
             this.searchSeries();
+        },
+
+        getStars(voto) {
+            let valutazioneInt = Math.ceil(voto / 2);
+            let stars = '';
+
+            for (let index = 1; index <= valutazioneInt; index++) {
+                stars += this.star;
+            }
+
+            return stars;
         }
 
 
@@ -88,6 +100,8 @@ export default {
         <p>Titolo Originale: {{ serie.original_name }}</p>
         <p>Lingua: <span class="lang-icon" :class="'lang-icon-' + serie.original_language"></span></p>
         <p>Voto: {{ serie.vote_average }}</p>
+        <p>Voto: <span v-html="getStars(serie.vote_average)"></span></p>
+
     </article>
     </div>
 
