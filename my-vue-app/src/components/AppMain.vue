@@ -32,6 +32,11 @@ export default {
 
 <template>
    <main>
+
+    <div class="container-fluid ">
+
+    
+
     <div class="movies d-flex flex-wrap">
         <article v-for="serie in store.series.results" :key="serie.id" class="movie-item">
             <h2>Titolo: {{ serie.name }}</h2>
@@ -42,7 +47,10 @@ export default {
             <p>Voto: <span v-html="getStars(serie.vote_average)"></span></p>
         </article>
     </div>
+
+    </div>
    </main>
+
 </template>
 
 <style lang="scss" scoped>
@@ -50,7 +58,7 @@ export default {
 
 main {
     padding: 2rem;
-    margin: 1rem;
+    margin-top: 10rem;
 }
 
 .movie {
